@@ -1,0 +1,21 @@
+{
+  "message": "Hello from the HTTP server test!",
+  "timestamp": "2024-10-05T14:30:00Z",
+  "data": {
+    "server_test": true,
+    "thread_count": 10,
+    "features": [
+      "multi-threading",
+      "binary transfer", 
+      "security validation",
+      "keep-alive connections"
+    ]
+  },
+  "nested_object": {
+    "level1": {
+      "level2": {
+        "deep_data": "This tests nested JSON handling"
+      }
+    }
+  }
+}

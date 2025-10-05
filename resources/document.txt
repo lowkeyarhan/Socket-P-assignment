@@ -1,0 +1,28 @@
+This is another test file for binary transfer testing.
+
+Multi-threaded HTTP Server Test File #2
+======================================
+
+This file is designed to test the server's ability to handle multiple file types
+and ensure proper binary transfer functionality.
+
+Key testing aspects:
+- Concurrent file downloads
+- Different file sizes
+- Binary data preservation
+- HTTP header accuracy
+- Error handling
+
+The server should maintain data integrity when serving this file as a binary download.
+This includes proper handling of different character encodings and special characters.
+
+Special characters test: áéíóú àèìòù âêîôû ñç ¡¿ €£¥ ©®™
+
+Binary transfer requirements:
+- Files must be read in binary mode
+- Content-Length must be accurate
+- No data corruption during transfer
+- Proper MIME type handling
+- Correct file download behavior
+
+This file should trigger a download when accessed via HTTP GET request.

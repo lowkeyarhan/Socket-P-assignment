@@ -1,0 +1,30 @@
+This is a sample text file for testing binary file transfer in our multi-threaded HTTP server.
+
+The server should serve this file with Content-Type: application/octet-stream
+and include a Content-Disposition header to trigger download.
+
+Features being tested:
+- Binary file reading
+- Proper HTTP headers for file downloads
+- Content-Length calculation
+- File integrity preservation
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+This file should be downloaded when requested via GET /sample.txt
+
+Test scenarios:
+1. Single file download
+2. Multiple concurrent downloads
+3. Large file handling
+4. Binary data integrity
+5. Proper HTTP response headers
+
+The server implementation should:
+- Read files in binary mode
+- Calculate correct Content-Length
+- Set appropriate headers
+- Handle file reading errors
+- Maintain data integrity during transfer

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Multi-threaded HTTP Server</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        --card-bg: rgba(255, 255, 255, 0.7);
+        --blur-effect: blur(20px);
+        --border-color: rgba(255, 255, 255, 0.4);
+        --text-primary: #1f2937;
+        --text-secondary: #4b5563;
+        --accent-color: #6366f1;
+        --soft-bg: #eef2f9;
+        --shadow-light: rgba(255, 255, 255, 0.9);
+        --shadow-dark: rgba(163, 177, 198, 0.6);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg-gradient);
+        min-height: 100vh;
+        padding: 24px;
+        color: var(--text-primary);
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .nav {
+        background: var(--card-bg);
+        backdrop-filter: var(--blur-effect);
+        -webkit-backdrop-filter: var(--blur-effect);
+        border: 1px solid var(--border-color);
+        border-radius: 24px;
+        padding: 12px;
+        margin-bottom: 24px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .nav a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        padding: 12px 24px;
+        border-radius: 18px;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .nav a:hover,
+      .nav a.active {
+        background: var(--accent-color);
+        color: white;
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        transform: translateY(-2px);
+      }
+
+      .card {
+        background: var(--card-bg);
+        backdrop-filter: var(--blur-effect);
+        -webkit-backdrop-filter: var(--blur-effect);
+        border-radius: 28px;
+        padding: 40px;
+        margin-bottom: 24px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        border: 1px solid var(--border-color);
+      }
+
+      h1 {
+        font-size: 2.75rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        text-align: center;
+        letter-spacing: -1px;
+        color: var(--text-primary);
+      }
+
+      .intro-text {
+        font-size: 1.125rem;
+        color: var(--text-secondary);
+        text-align: center;
+        margin-bottom: 40px;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+      }
+
+      .feature-card {
+        background: var(--soft-bg);
+        border-radius: 20px;
+        padding: 24px;
+        margin-bottom: 20px;
+        box-shadow: 6px 6px 12px var(--shadow-dark),
+          -6px -6px 12px var(--shadow-light);
+      }
+
+      .feature-card h3 {
+        color: var(--accent-color);
+        font-size: 1.25rem;
+        margin-bottom: 8px;
+      }
+
+      .feature-card p {
+        color: var(--text-secondary);
+        line-height: 1.7;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 16px;
+        }
+        .card {
+          padding: 24px;
+        }
+        h1 {
+          font-size: 2.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/about.html" class="active">About</a>
+        <a href="/contact.html">Testing</a>
+      </nav>
+
+      <main class="card">
+        <h1>About This Server</h1>
+        <p class="intro-text">
+          A custom multi-threaded HTTP server built from scratch to demonstrate
+          core networking concepts and a modern protocol implementation.
+        </p>
+
+        <div class="feature-card">
+          <h3>⚙️ Threading Architecture</h3>
+          <p>
+            Uses a thread pool pattern with configurable maximum threads
+            (default: 10). Connections are queued when the pool is saturated,
+            ensuring efficient resource utilization.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>📦 Binary File Transfer</h3>
+          <p>
+            Supports serving both HTML content and binary files as attachments.
+            Binary files maintain data integrity through proper byte handling.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>🛡️ Security Features</h3>
+          <p>
+            Implements path traversal protection, host header validation, and
+            comprehensive request validation to prevent common web
+            vulnerabilities.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>🔗 Connection Management</h3>
+          <p>
+            Supports HTTP/1.1 keep-alive connections with configurable timeouts
+            (30s) and request limits (100 per connection).
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>📝 JSON Processing</h3>
+          <p>
+            Handles POST requests with JSON payloads, validates content, and
+            creates timestamped files in the uploads directory.
+          </p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
